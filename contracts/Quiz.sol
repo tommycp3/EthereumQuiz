@@ -11,7 +11,7 @@ contract Quiz {
 
     function Quiz() public {
         owner = msg.sender;
-        expires = now + 2 days;
+        // expires = now + 2 days;
         claimed = false;
 
         questions[0] = "What is the network ID number of the public ethereum blockchain?";
@@ -77,8 +77,8 @@ contract Quiz {
     }
 
     function refund(address to) public onlyOwner {
-        require(claimed != true);
-        require(now > expires + 1 days);
+        // require(claimed != true);
+        // require(now > expires + 1 days);
         
         to.transfer(this.balance);
     }
